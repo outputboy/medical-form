@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  //Wizard
+  // Multi step form Wizard
   $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
     var $target = $(e.target);
 
@@ -8,6 +8,7 @@ $(document).ready(function() {
     }
   });
 
+  // While clicking next step button
   $('.next-step').click(function(e) {
     // Validate form
     if (!$('#medical-history-form').valid()) {
@@ -65,7 +66,7 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  // check if yes raido button checked
+  // If 'yes' raido button checked, enable relative text input
   $('.check-yes').click(function() {
     $detail_input = $(this)
       .parentsUntil('.block-with-detail')
@@ -81,7 +82,7 @@ $(document).ready(function() {
       $detail_input.addClass('disabled');
     }
   });
-  // check if no raido button checked
+  // If 'no' raido button checked, disable relative text input
   $('.check-no').click(function() {
     $detail_input = $(this)
       .parentsUntil('.block-with-detail')
@@ -98,7 +99,7 @@ $(document).ready(function() {
     }
   });
 
-  // Date picker
+  // Bootstrap Date picker
   $('.input-group.date')
     .datepicker()
     .on('changeDate', function(ev) {
@@ -115,8 +116,7 @@ $(document).ready(function() {
         .val(newDate.getFullYear());
     });
 
-  //validate rules
-  /*
+  //Validate rules
   $('#medical-history-form').validate({
     rules: {
       date_of_birth_day: {
@@ -172,7 +172,6 @@ $(document).ready(function() {
         .addClass('error');
     }
   });
-  */
 });
 function nextTab(elem) {
   $(elem)
