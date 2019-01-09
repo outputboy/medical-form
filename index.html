@@ -13,6 +13,7 @@
       <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
       <!--JavaScript at end of body for optimized loading-->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
       <!--Customized JS-->
       <script src="medical-form.js"></script>
    </head>
@@ -106,22 +107,22 @@
                            </div>
                            <!--Step 1 contact details-->
                            <div class="block block--content row">
-                              <div class=" col-sm-12 col-md-4">
+                              <div class="short-input">
                                  <div class="block block--contact-details">
                                     <div class="row">
                                        <h4>Contact Details</h4>
                                     </div>
                                     <div class="row row-contact-details">
                                        <div class="col-sm-4">
-                                          <input type="text" placeholder="Title">
+                                          <span class="span--contact-detail">Title</span>
                                        </div>
                                        <div class="col-sm-8">
-                                          <input type="text" placeholder="Mrs" name="patient_title">
+                                          <input type="text" placeholder="Mrs" name="title">
                                        </div>
                                     </div>
                                     <div class="row row-contact-details">
                                        <div class="col-sm-4">
-                                          <input type="text" placeholder="First name">
+                                          <span class="span--contact-detail">First name</span>
                                        </div>
                                        <div class="col-sm-8">
                                           <input type="text" placeholder="Olivia" name="first_name">
@@ -129,7 +130,7 @@
                                     </div>
                                     <div class="row row-contact-details">
                                        <div class="col-sm-4">
-                                          <input type="text" placeholder="Last name">
+                                          <span class="span--contact-detail">Last name</span>
                                        </div>
                                        <div class="col-sm-8">
                                           <input type="text" placeholder="Posey" name="last_name">
@@ -137,7 +138,7 @@
                                     </div>
                                     <div class="row row-contact-details">
                                        <div class="col-sm-4">
-                                          <input type="text" placeholder="Phone">
+                                          <span class="span--contact-detail">Phone</span>
                                        </div>
                                        <div class="col-sm-8">
                                           <input type="text" placeholder="0435122565" name="phone">
@@ -145,7 +146,7 @@
                                     </div>
                                     <div class="row row-contact-details">
                                        <div class="col-sm-4">
-                                          <input type="text" placeholder="Email">
+                                          <span class="span--contact-detail">Email</span>
                                        </div>
                                        <div class="col-sm-8">
                                           <input type="text" placeholder="Oliviaposey@gmail.com" name="email">
@@ -160,9 +161,9 @@
                                        </h4>
                                     </div>
                                     <div class="row">
-                                       <input type="text" class="form-control input-date-day" placeholder="DD">
-                                       <input type="text" class="form-control input-date-month" placeholder="MM">
-                                       <input type="text" class="form-control input-date-year" placeholder="YYYY">
+                                       <input type="text" class="form-control input-date-day" placeholder="DD" name="date_of_birth_day">
+                                       <input type="text" class="form-control input-date-month" placeholder="MM" name="date_of_birth_month">
+                                       <input type="text" class="form-control input-date-year" placeholder="YYYY" name="date_of_birth_year">
                                     </div>
                                  </div>
                                  <!--Step 1 gender-->
@@ -172,20 +173,22 @@
                                           <span class="mandatory-sign"></span>
                                        </h4>
                                     </div>
+                                    <div class="row">
                                     <div class="checkbox">
                                        <label>
-                                       <input type="radio" value="" name="gender">
+                                       <input type="radio" value="male" name="gender">
                                        <span class="checkmark"></span>Male</label>
                                     </div>
                                     <div class="checkbox">
                                        <label>
-                                       <input type="radio" value="" name="gender">
+                                       <input type="radio" value="female" name="gender">
                                        <span class="checkmark"></span>Female</label>
                                     </div>
                                     <div class="checkbox">
                                        <label>
-                                       <input type="radio" value="" name="gender">
+                                       <input type="radio" value="rather not say" name="gender">
                                        <span class="checkmark"></span>Rather not say</label>
+                                    </div>
                                     </div>
                                  </div>
                                  <!--Step 1 home address-->
@@ -199,7 +202,7 @@
                                        <h5>Number</h5>
                                     </div>
                                     <div class="row">
-                                       <div class="col-md-4 offset-md-8 col-sm-12">
+                                       <div class="short-input">
                                           <input type="text" class="form-control" name="address_number">
                                        </div>
                                     </div>
@@ -207,7 +210,7 @@
                                        <h5>Street Name</h5>
                                     </div>
                                     <div class="row">
-                                       <div class="col-sm-12">
+                                       <div>
                                           <input type="text" class="form-control" name="address_street_name">
                                        </div>
                                     </div>
@@ -215,7 +218,7 @@
                                        <h5>Suburb</h5>
                                     </div>
                                     <div class="row">
-                                       <div class="col-sm-12">
+                                       <div>
                                           <input type="text" class="form-control" name="address_suburb">
                                        </div>
                                     </div>
@@ -223,7 +226,7 @@
                                        <h5>State</h5>
                                     </div>
                                     <div class="row">
-                                       <div class="col-md-4 offset-md-8 col-sm-12">
+                                       <div class="short-input">
                                           <input type="text" class="form-control" name="address_state">
                                        </div>
                                     </div>
@@ -239,16 +242,16 @@
                                        <h5>Card number</h5>
                                     </div>
                                     <div class="row">
-                                       <div class="col-sm-12">
-                                          <input type="text" class="form-control" name="card_number">
+                                       <div>
+                                          <input type="text" class="form-control" name="medicare_card_number">
                                        </div>
                                     </div>
                                     <div class="row">
                                        <h5>Card reference</h5>
                                     </div>
                                     <div class="row">
-                                       <div class="col-md-4 offset-md-8 col-sm-12">
-                                          <input type="text" class="form-control" name="card_reference">
+                                       <div class="short-input">
+                                          <input type="text" class="form-control" name="medicare_card_reference">
                                        </div>
                                     </div>
                                  </div>
@@ -271,199 +274,224 @@
                         <!--Step 2-->
                         <div class="tab-pane" role="tabpanel" id="step2">
                            <!--Step 2 title-->
-                           <div class="block block--title">
+                           <div class="block--title">
                               <div class="row">
                                  <h3>Your persona details</h3>
                               </div>
                            </div>
                            <!--Step 2 doctor address-->
-                           <div class="block">
+                          <div class="row">
+                           <div class="block short-input">
                               <div class="row">
                                  <h4>Your doctor
-                                    <span class="mandatory-sign"></span>
                                  </h4>
                               </div>
                               <div class="row">
                                  <h5>Name of GP</h5>
                               </div>
                               <div class="row">
-                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control">
+                                 <div>
+                                    <input type="text" class="form-control" name="gp_name">
                                  </div>
                               </div>
                               <div class="row">
                                  <h5>Street Name</h5>
                               </div>
                               <div class="row">
-                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control">
+                                 <div>
+                                    <input type="text" class="form-control" name="gp_street_name">
                                  </div>
                               </div>
                               <div class="row">
                                  <h5>Suburb</h5>
                               </div>
                               <div class="row">
-                                 <div class="col-sm-12">
-                                    <input type="text" class="form-control">
+                                 <div>
+                                    <input type="text" class="form-control" name="gp_suburb">
                                  </div>
                               </div>
                               <div class="row">
                                  <h5>State</h5>
                               </div>
                               <div class="row">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
-                                    <input type="text" class="form-control">
+                                 <div class="short-input">
+                                    <input type="text" class="form-control" name="gp_state">
                                  </div>
                               </div>
                            </div>
+                          </div>
                            <!--Step 2 disease-->
-                           <div class="block">
+                           <div class="row">
+                           <div class="block short-input">
                               <div class="row">
                                  <h4>Have you had any of the following.
                                     <br>Please check all that apply
                                  </h4>
                               </div>
+                              <div class="row">
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_anaemia">
                                  <span class="checkmark"></span>Anaemia</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_artificial_joints">
                                  <span class="checkmark"></span>Artificial joints</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_allergies">
                                  <span class="checkmark"></span>Allergies</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_asthma">
                                  <span class="checkmark"></span>Asthma</label>
                               </div>
+                              <div class="block-with-detail">
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
-                                 <span class="checkmark"></span>Blood disease(please specify)</label>
+                                 <input type="checkbox" value="yes" name="disease_blood_disease" class="check-yes">
+                                 <span class="checkmark"></span>Blood disease (please specify)</label>
+                              </div>
+                                <div class="detail disabled">
+                                   <input type="text" class="form-control" disabled="disabled" name="disease_blood_disease_details">
+                                </div>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_cancer">
                                  <span class="checkmark"></span>Cancer</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_dizziness">
                                  <span class="checkmark"></span>Dizziness/Fainting</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_diabetes">
                                  <span class="checkmark"></span>Diabetes</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_epilepsy">
                                  <span class="checkmark"></span>Epilepsy</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_excessive_bleeding">
                                  <span class="checkmark"></span>Excessive bleeding</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_glaucoma">
                                  <span class="checkmark"></span>Glaucoma</label>
                               </div>
+                              <div class="block-with-detail">
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_blood_pressure" class="check-yes">
                                  <span class="checkmark"></span>Blood pressure low or high (specify)</label>
                               </div>
+                                <div class="detail short-input disabled">
+                                   <input type="text" class="form-control" disabled="disabled" name="disease_blood_pressure_details">
+                                </div>
+                                </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_heart_disease">
                                  <span class="checkmark"></span>Heart disease or murmur</label>
                               </div>
+                              <div class="block-with-detail">
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_hepatitis" class="check-yes">
                                  <span class="checkmark"></span>Hepatitis A, B or C (please specify)</label>
                               </div>
+                                <div class="detail short-input disabled">
+                                   <input type="text" class="form-control" disabled="disabled" name="disease_hepatitis_details">
+                                </div>
+                                </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_aids">
                                  <span class="checkmark"></span>HIV/AIDS</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_kidney_disease">
                                  <span class="checkmark"></span>Kidney disease</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_liver_disease">
                                  <span class="checkmark"></span>Liver disease</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_osteoporosis">
                                  <span class="checkmark"></span>Osteoporosis</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_Pacemaker">
                                  <span class="checkmark"></span>Pacemaker</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_psychological_disorders">
                                  <span class="checkmark"></span>Psychological disorders</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_rheumatic_fever">
                                  <span class="checkmark"></span>Rheumatic fever</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_radiation_therapy">
                                  <span class="checkmark"></span>Radiation therapy</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_respiratory">
                                  <span class="checkmark"></span>Respiratory problems</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_stroke">
                                  <span class="checkmark"></span>Stroke</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_sinus">
                                  <span class="checkmark"></span>Sinus problems</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_tumours">
                                  <span class="checkmark"></span>Tumours</label>
                               </div>
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_turberculosis">
                                  <span class="checkmark"></span>Turberculosis</label>
                               </div>
+                              <div class="block-with-detail">
                               <div class="checkbox">
                                  <label>
-                                 <input type="checkbox" value="">
+                                 <input type="checkbox" value="yes" name="disease_other" class="check-yes">
                                  <span class="checkmark"></span>Other (please specify)</label>
                               </div>
+                                <div class="detail disabled">
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="disease_other_details"></textarea>
+                                </div>
+                                </div>
                            </div>
+                           </div>
+                          </div>
                            <!--Step 2 buttons-->
                            <div class="row">
                               <ul class="list-inline">
@@ -484,13 +512,13 @@
                         <!--Step 3-->
                         <div class="tab-pane" role="tabpanel" id="step3">
                            <!--Step 3 title-->
-                           <div class="block block--title">
+                           <div class="block--title">
                               <div class="row">
                                  <h3>Medical history</h3>
                               </div>
                            </div>
                            <!--Step 3 pregnant check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Are you pregnant?
                                  </h4>
@@ -498,24 +526,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="pregnant_check" class="check-no">
+                                    <input type="radio" value="no" name="pregnant" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="pregnant_check" class="check-yes">
+                                    <input type="radio" value="yes" name="pregnant" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>How many month</h5>
-                                    <input type="text" class="form-control" disabled="disabled">
+                                    <input type="text" class="form-control" disabled="disabled" name="pregnant_details">
                                  </div>
                               </div>
                            </div>
                            <!--Step 3 illness check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Have you had any serious illnesses in the last two years?
                                  </h4>
@@ -523,24 +551,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="illness_check" class="check-no">
+                                    <input type="radio" value="no" name="illness" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="illness_check" class="check-yes">
+                                    <input type="radio" value="yes" name="illness" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="illness_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 3 medication check-->
-                           <div class="block block--medication-check">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Are you taking any medications?
                                  </h4>
@@ -548,24 +576,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="medication_check" class="check-no">
+                                    <input type="radio" value="no" name="medication" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="medication_check" class="check-yes">
+                                    <input type="radio" value="yes" name="medication" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12 medication_detail">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="medication_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 3 smoke check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Do you smoke?
                                  </h4>
@@ -573,19 +601,19 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="smoke_check" class="check-no">
+                                    <input type="radio" value="no" name="smoke" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="smoke_check" class="check-yes">
+                                    <input type="radio" value="yes" name="smoke" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>How many a day?</h5>
-                                    <input type="text" class="form-control" disabled="disabled">
+                                    <input type="text" class="form-control" disabled="disabled" name="smoke_details">
                                  </div>
                               </div>
                            </div>
@@ -598,23 +626,23 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="apnoea_check">
+                                    <input type="radio" value="no" name="apnoea">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="apnoea_check">
+                                    <input type="radio" value="yes" name="apnoea">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="apnoea_check">
+                                    <input type="radio" value="dont know" name="apnoea">
                                     <span class="checkmark"></span>Don't know</label>
                                  </div>
                               </div>
                            </div>
                            <!--Step 3 allergies to penicillin check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Do you have allergies to penicillin or other drugs?
                                  </h4>
@@ -622,23 +650,23 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="penicillin_check" class="check-no">
+                                    <input type="radio" value="no" name="penicillin" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="penicillin_check" class="check-yes">
+                                    <input type="radio" value="yes" name="penicillin" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12 penicillin_detail">
+                                 <div class="short-input">
                                     <label>Please provide details</label>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="penicillin_details"></textarea>
                                  </div>
                               </div>
                            </div>
-                           <!--Step 3 sleep apnoea check-->
+                           <!--Step 3 sleep antibiotic check-->
                            <div class="block">
                               <div class="row">
                                  <h4>Do you require antibiotic cover for dental treatment?
@@ -647,17 +675,17 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="antibiotic_check">
+                                    <input type="radio" value="no" name="antibiotic">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="antibiotic_check">
+                                    <input type="radio" value="yes" name="antibiotic">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="antibiotic_check">
+                                    <input type="radio" value="dont know" name="antibiotic">
                                     <span class="checkmark"></span>Don't know</label>
                                  </div>
                               </div>
@@ -682,13 +710,13 @@
                         <!--Step 4-->
                         <div class="tab-pane" role="tabpanel" id="step4">
                            <!--Step 4 title-->
-                           <div class="block block--title">
+                           <div class="block--title">
                               <div class="row">
                                  <h3>Dental history</h3>
                               </div>
                            </div>
                            <!--Step 4 smile check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Is there anything you would like to change about your smile?
                                  </h4>
@@ -696,24 +724,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="smile_check" class="check-no">
+                                    <input type="radio" value="no" name="change_smile" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="smile_check" class="check-yes">
+                                    <input type="radio" value="yes" name="change_smile" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="change_smile_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 4 fear check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Are you fearful of dental treatments, have had  complications or an unfavourable experience?
                                  </h4>
@@ -721,24 +749,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="fear_check" class="check-no">
+                                    <input type="radio" value="no" name="fearful_of_dental" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="fear_check" class="check-yes">
+                                    <input type="radio" value="yes" name="fearful_of_dental" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="fearful_of_dental_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 4 sensitive check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Do you have sensitive teeth, any grooves or indents, broken or chipped teeth?
                                  </h4>
@@ -746,24 +774,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="sensitive_check" class="check-no">
+                                    <input type="radio" value="no" name="sensitive_teeth" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="sensitive_check" class="check-yes">
+                                    <input type="radio" value="yes" name="sensitive_teeth" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="sensitive_teeth_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 4 jaw check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Do you have problems with your bite or jaw? Any clicking, clenching, grinding or wear a bite appliance?
                                  </h4>
@@ -771,24 +799,24 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="jaw_check" class="check-no">
+                                    <input type="radio" value="no" name="jaw_problems" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="jaw_check" class="check-yes">
+                                    <input type="radio" value="yes" name="jaw_problems" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="jaw_problems_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 4 gum check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Do you have gum disease, gum bleeding or gum recession?
                                  </h4>
@@ -796,19 +824,19 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="gum_check" class="check-no">
+                                    <input type="radio" value="no" name="gum_disease" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="gum_check" class="check-yes">
+                                    <input type="radio" value="yes" name="gum_disease" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="gum_disease_details"></textarea>
                                  </div>
                               </div>
                            </div>
@@ -832,13 +860,13 @@
                         <!--Step 5-->
                         <div class="tab-pane" role="tabpanel" id="step5">
                            <!--Step 5 title-->
-                           <div class="block block--title">
+                           <div class="block--title">
                               <div class="row">
                                  <h3>Consent for services</h3>
                               </div>
                            </div>
                            <!--Step 5 concerns check-->
-                           <div class="block">
+                           <div class="block block-with-detail">
                               <div class="row">
                                  <h4>Do you have any immediate concerns?
                                  </h4>
@@ -846,24 +874,25 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="concerns_check" class="check-no">
+                                    <input type="radio" value="no" name="concerns" class="check-no">
                                     <span class="checkmark"></span>No</label>
                                  </div>
                                  <div class="checkbox block--checkbox-inline">
                                     <label>
-                                    <input type="radio" value="" name="concerns_check" class="check-yes">
+                                    <input type="radio" value="yes" name="concerns" class="check-yes">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
                               <div class="row detail disabled">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <h5>Please specify</h5>
-                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                    <textarea class="form-control" rows="5" disabled="disabled" name="concerns_details"></textarea>
                                  </div>
                               </div>
                            </div>
                            <!--Step 5 previous dentist-->
-                           <div class="block block--date">
+                           <div class="row">
+                           <div class="block block--date short-input">
                               <div class="row">
                                  <h4>Your previous Dentist
                                  </h4>
@@ -872,7 +901,7 @@
                                  <h5>Name of Dentist</h5>
                               </div>
                               <div class="row">
-                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                 <div class="short-input">
                                     <input type="text" class="form-control" name="dentist_name">
                                  </div>
                               </div>
@@ -880,9 +909,13 @@
                                  <h5>Most recent examination</h5>
                               </div>
                               <div class="row">
-                                 <input type="text" class="form-control input-date-day" placeholder="DD">
-                                 <input type="text" class="form-control input-date-month" placeholder="MM">
-                                 <input type="text" class="form-control input-date-year" placeholder="YYYY">
+                                 <input type="text" class="form-control input-date-day" placeholder="DD" name="recent_examination_day">
+                                 <input type="text" class="form-control input-date-month" placeholder="MM" name="recent_examination_month">
+                                 <input type="text" class="form-control input-date-year" placeholder="YYYY" name="recent_examination_year">
+                                 <div class="input-group date">
+                                    <div class="input-group-addon" ><img src="./calendar.png" class="img-responsive" /></div>
+                                  </div>
+                              </div>
                               </div>
                            </div>
                            <!--Step 5 consent-->
@@ -893,7 +926,7 @@
                               <div class="row">
                                  <div class="checkbox block--checkbox-inline">
                                     <label id="patient_name">
-                                    <input type="checkbox" value="" name="consent_check">
+                                    <input type="checkbox" value="yes" name="consent_check">
                                     <span class="checkmark"></span>Yes</label>
                                  </div>
                               </div>
@@ -907,7 +940,7 @@
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="submit" class="next-step">
+                                    <button type="submit" class="next-step" id="submit-button">
                                     Submit
                                     </button>
                                  </li>

@@ -6,12 +6,39 @@ label {
     font-size: 18px;
 }
 
+h4 {
+    line-height: 24px;
+}
+
 h5 {
     font-size: 16px;
 }
 
+a {
+    color: #777;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    display: block;
+}
+
 .form-control[disabled] {
     background-color: white;
+}
+
+.block {
+    margin-bottom: 30px;
+}
+
+.short-input {
+    width: 40%;
 }
 
 /* Content form style */
@@ -223,7 +250,13 @@ textarea.form-control {
     border-color: grey;
 }
 
-.block--contact-details>div {
+.block--contact-details {
+    padding-left: 0;
+    font-size: 16px;
+}
+
+.row-contact-details .col-sm-4,
+.row-contact-details .col-sm-8 {
     padding-left: 0;
 }
 
@@ -235,6 +268,12 @@ textarea.form-control {
 
 .row-contact-details {
     border-bottom: 2px solid #8AA5D0;
+}
+
+.span--contact-detail {
+    display: block;
+    padding: 20px 0;
+    color: #6c757d;
 }
 
 /* Date input */
@@ -254,6 +293,19 @@ textarea.form-control {
     width: 30%;
 }
 
+.input-group.date {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.input-group.date .input-group-addon {
+    padding: 0;
+    border: 0;
+}
+
 /* Next step button style */
 
 .next-step,
@@ -266,10 +318,17 @@ textarea.form-control {
     background-color: white;
 }
 
-@media( max-width: 585px) {
+.short-input {
+    width: 40%;
+}
+
+@media( max-width: 768px) {
     .wizard {
-        width: 90%;
+        width: 100%;
         height: auto !important;
+    }
+    .wizard-inner {
+        width: 95%;
     }
     span.round-tab {
         font-size: 16px;
@@ -279,5 +338,18 @@ textarea.form-control {
     }
     .connecting-line {
         display: none;
+    }
+    span.p-title {
+        bottom: -40px;
+    }
+    .short-input {
+        width: 100%;
+    }
+    .next-step,
+    .prev-step {
+        margin-bottom: 20px;
+    }
+    .block--date input {
+        margin-right: 5px;
     }
 }
