@@ -6,6 +6,10 @@ label {
     font-size: 18px;
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 h4 {
     line-height: 24px;
 }
@@ -169,7 +173,7 @@ span.p-title {
 .checkbox {
     display: block;
     position: relative;
-    padding-left: 35px;
+    padding-left: 40px;
     margin-bottom: 22px;
     cursor: pointer;
     font-size: 22px;
@@ -198,10 +202,10 @@ span.p-title {
 
 .checkmark {
     position: absolute;
-    top: 0;
+    top: -5px;
     left: 0;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     border: 1px solid #14499D;
 }
 
@@ -216,10 +220,10 @@ span.p-title {
 }
 
 .checkbox .checkmark:after {
-    left: 9px;
-    top: 4px;
-    width: 8px;
-    height: 15px;
+    left: 12px;
+    top: 5px;
+    width: 10px;
+    height: 18px;
     border: solid #14499D;
     border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
@@ -234,8 +238,13 @@ textarea.form-control {
     margin: 10px 0;
     border-radius: 0;
     border: 1px solid #14499D;
-    padding: 20px 10px;
+    padding: 25px 10px;
     font-size: 18px;
+}
+
+.block--disease h4,
+.block--disease input.form-control {
+    margin-bottom: 20px;
 }
 
 .disabled {
@@ -310,7 +319,7 @@ textarea.form-control {
 
 .next-step,
 .prev-step {
-    padding: 10px 80px;
+    padding: 15px 100px;
     border: 1px solid #FDBE2C;
     border-radius: 30px;
     font-size: 16px;
@@ -323,6 +332,9 @@ textarea.form-control {
 }
 
 @media( max-width: 768px) {
+    .tab-content {
+        padding: 20px;
+    }
     .wizard {
         width: 100%;
         height: auto !important;
@@ -351,5 +363,12 @@ textarea.form-control {
     }
     .block--date input {
         margin-right: 5px;
+    }
+}
+
+@media( max-width: 350px) {
+    .next-step,
+    .prev-step {
+        padding: 15px 80px;
     }
 }

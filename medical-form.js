@@ -9,8 +9,8 @@ $(document).ready(function() {
   });
 
   $('.next-step').click(function(e) {
+    // Validate form
     if (!$('#medical-history-form').valid()) {
-      //I added an extra parenthesis at the end
       return false;
     }
 
