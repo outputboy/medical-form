@@ -1,233 +1,925 @@
 <html>
-  <head>
-    <title>Medical Form</title>
-    <!--Import Google Icon Font-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css"
-    />
-    <!--Import materialize.css-->
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="css/materialize.min.css"
-      media="screen,projection"
-    />
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Customized CSS-->
-    <link href="style.css" rel="stylesheet" type="text/css" />
-
-    <!--Jquery CDN-->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"
-    ></script>
-    <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <!--Customized JS-->
-    <script src="medical-form.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <section>
-        <div class="wizard">
-          <!--navigation bar-->
-          <div class="row">
-            <div class="wizard-inner col-md-5 offset-md-7 col-sm-12">
-              <div class="connecting-line"></div>
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                  <a
-                    href="#step1"
-                    data-toggle="tab"
-                    aria-controls="step1"
-                    role="tab"
-                    title="Step 1"
-                  >
-                    <span class="round-tab">
-                      1
-                    </span>
-                  </a>
-                </li>
-
-                <li role="presentation" class="disabled">
-                  <a
-                    href="#step2"
-                    data-toggle="tab"
-                    aria-controls="step2"
-                    role="tab"
-                    title="Step 2"
-                  >
-                    <span class="round-tab">
-                      2
-                    </span>
-                  </a>
-                </li>
-                <li role="presentation" class="disabled">
-                  <a
-                    href="#step3"
-                    data-toggle="tab"
-                    aria-controls="step3"
-                    role="tab"
-                    title="Step 3"
-                  >
-                    <span class="round-tab">
-                      3
-                    </span>
-                  </a>
-                </li>
-                <li role="presentation" class="disabled">
-                  <a
-                    href="#step4"
-                    data-toggle="tab"
-                    aria-controls="step4"
-                    role="tab"
-                    title="Step 4"
-                  >
-                    <span class="round-tab">
-                      4
-                    </span>
-                  </a>
-                </li>
-                <li role="presentation" class="disabled">
-                  <a
-                    href="#step5"
-                    data-toggle="tab"
-                    aria-controls="step5"
-                    role="tab"
-                    title="Step 5"
-                  >
-                    <span class="round-tab">
-                      5
-                    </span>
-                  </a>
-                </li>
-                
-              </ul>
+   <head>
+      <title>Medical Form</title>
+      <!--Import Google Icon Font-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css" />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!--Customized CSS-->
+      <link href="style.css" rel="stylesheet" type="text/css" />
+      <!--Jquery CDN-->
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
+      <!--JavaScript at end of body for optimized loading-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <!--Customized JS-->
+      <script src="medical-form.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <section>
+            <div class="wizard">
+               <!--navigation bar-->
+               <div class="row">
+                  <div class="wizard-inner col-md-5 offset-md-7 col-sm-12">
+                     <div class="connecting-line"></div>
+                     <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                           <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                           <span class="round-tab">
+                           1
+                           </span>
+                           <span class="p-title">Personal</span>
+                           </a>
+                        </li>
+                        <li role="presentation" class="disabled">
+                           <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                           <span class="round-tab">
+                           2
+                           </span>
+                           <span class="p-title">Doctor</span>
+                           </a>
+                        </li>
+                        <li role="presentation" class="disabled">
+                           <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                           <span class="round-tab">
+                           3
+                           </span>
+                           <span class="p-title">Medical</span>
+                           </a>
+                        </li>
+                        <li role="presentation" class="disabled">
+                           <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Step 4">
+                           <span class="round-tab">
+                           4
+                           </span>
+                           <span class="p-title">Dental</span>
+                           </a>
+                        </li>
+                        <li role="presentation" class="disabled">
+                           <a href="#step5" data-toggle="tab" aria-controls="step5" role="tab" title="Step 5">
+                           <span class="round-tab">
+                           5
+                           </span>
+                           <span class="p-title">Consent</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <!--end navigation bar-->
+               <form role="form" id="medical-history-form">
+                  <div class="row ">
+                     <!--Step 1-->
+                     <div class="tab-content">
+                        <div class="tab-pane active" role="tabpanel" id="step1">
+                           <div class="block row logo">
+                              <img src="./logo.png" class="img-responsive" />
+                           </div>
+                           <!--Step 1 header-->
+                           <div class="block block--header">
+                              <div class="row">
+                                 <h2>Dental and medical history</h2>
+                              </div>
+                              <div class="row">
+                                 <p>It is a requirement of the
+                                    <b>Australian Dental Association</b> that we collect this
+                                    information. Thank you for choosing to complete this before
+                                    your appointment.
+                                 </p>
+                              </div>
+                              <div class="row">
+                                 <p class="font-italic">All information on this form will remain strictly confidential.</p>
+                              </div>
+                           </div>
+                           <!--Step 1 title-->
+                           <div class="block block--title">
+                              <div class="row">
+                                 <h3>Your persona details</h3>
+                              </div>
+                              <div class="row">
+                                 <p>
+                                    <span class="mandatory-sign"></span>Your persona details
+                                 </p>
+                              </div>
+                           </div>
+                           <!--Step 1 contact details-->
+                           <div class="block block--content row">
+                              <div class=" col-sm-12 col-md-4">
+                                 <div class="block block--contact-details">
+                                    <div class="row">
+                                       <h4>Contact Details</h4>
+                                    </div>
+                                    <div class="row row-contact-details">
+                                       <div class="col-sm-4">
+                                          <input type="text" placeholder="Title">
+                                       </div>
+                                       <div class="col-sm-8">
+                                          <input type="text" placeholder="Mrs" name="patient_title">
+                                       </div>
+                                    </div>
+                                    <div class="row row-contact-details">
+                                       <div class="col-sm-4">
+                                          <input type="text" placeholder="First name">
+                                       </div>
+                                       <div class="col-sm-8">
+                                          <input type="text" placeholder="Olivia" name="first_name">
+                                       </div>
+                                    </div>
+                                    <div class="row row-contact-details">
+                                       <div class="col-sm-4">
+                                          <input type="text" placeholder="Last name">
+                                       </div>
+                                       <div class="col-sm-8">
+                                          <input type="text" placeholder="Posey" name="last_name">
+                                       </div>
+                                    </div>
+                                    <div class="row row-contact-details">
+                                       <div class="col-sm-4">
+                                          <input type="text" placeholder="Phone">
+                                       </div>
+                                       <div class="col-sm-8">
+                                          <input type="text" placeholder="0435122565" name="phone">
+                                       </div>
+                                    </div>
+                                    <div class="row row-contact-details">
+                                       <div class="col-sm-4">
+                                          <input type="text" placeholder="Email">
+                                       </div>
+                                       <div class="col-sm-8">
+                                          <input type="text" placeholder="Oliviaposey@gmail.com" name="email">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!--Step 1 date of birth-->
+                                 <div class="block block--date">
+                                    <div class="row">
+                                       <h4>Date of birth
+                                          <span class="mandatory-sign"></span>
+                                       </h4>
+                                    </div>
+                                    <div class="row">
+                                       <input type="text" class="form-control input-date-day" placeholder="DD">
+                                       <input type="text" class="form-control input-date-month" placeholder="MM">
+                                       <input type="text" class="form-control input-date-year" placeholder="YYYY">
+                                    </div>
+                                 </div>
+                                 <!--Step 1 gender-->
+                                 <div class="block">
+                                    <div class="row">
+                                       <h4>Gender
+                                          <span class="mandatory-sign"></span>
+                                       </h4>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="radio" value="" name="gender">
+                                       <span class="checkmark"></span>Male</label>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="radio" value="" name="gender">
+                                       <span class="checkmark"></span>Female</label>
+                                    </div>
+                                    <div class="checkbox">
+                                       <label>
+                                       <input type="radio" value="" name="gender">
+                                       <span class="checkmark"></span>Rather not say</label>
+                                    </div>
+                                 </div>
+                                 <!--Step 1 home address-->
+                                 <div class="block">
+                                    <div class="row">
+                                       <h4>Home address
+                                          <span class="mandatory-sign"></span>
+                                       </h4>
+                                    </div>
+                                    <div class="row">
+                                       <h5>Number</h5>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-md-4 offset-md-8 col-sm-12">
+                                          <input type="text" class="form-control" name="address_number">
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <h5>Street Name</h5>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-sm-12">
+                                          <input type="text" class="form-control" name="address_street_name">
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <h5>Suburb</h5>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-sm-12">
+                                          <input type="text" class="form-control" name="address_suburb">
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <h5>State</h5>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-md-4 offset-md-8 col-sm-12">
+                                          <input type="text" class="form-control" name="address_state">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!--Step 1 medicare number-->
+                                 <div class="block">
+                                    <div class="row">
+                                       <h4>Medicare number
+                                          <span class="mandatory-sign"></span>
+                                       </h4>
+                                    </div>
+                                    <div class="row">
+                                       <h5>Card number</h5>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-sm-12">
+                                          <input type="text" class="form-control" name="card_number">
+                                       </div>
+                                    </div>
+                                    <div class="row">
+                                       <h5>Card reference</h5>
+                                    </div>
+                                    <div class="row">
+                                       <div class="col-md-4 offset-md-8 col-sm-12">
+                                          <input type="text" class="form-control" name="card_reference">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <!--Step 1 next button-->
+                                 <div class="block">
+                                    <div class="row">
+                                       <ul class="list-inline">
+                                          <li>
+                                             <button type="button" class="next-step">
+                                             Next
+                                             </button>
+                                          </li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <!--end Step 1-->
+                        <!--Step 2-->
+                        <div class="tab-pane" role="tabpanel" id="step2">
+                           <!--Step 2 title-->
+                           <div class="block block--title">
+                              <div class="row">
+                                 <h3>Your persona details</h3>
+                              </div>
+                           </div>
+                           <!--Step 2 doctor address-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Your doctor
+                                    <span class="mandatory-sign"></span>
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <h5>Name of GP</h5>
+                              </div>
+                              <div class="row">
+                                 <div class="col-sm-12">
+                                    <input type="text" class="form-control">
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <h5>Street Name</h5>
+                              </div>
+                              <div class="row">
+                                 <div class="col-sm-12">
+                                    <input type="text" class="form-control">
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <h5>Suburb</h5>
+                              </div>
+                              <div class="row">
+                                 <div class="col-sm-12">
+                                    <input type="text" class="form-control">
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <h5>State</h5>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <input type="text" class="form-control">
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 2 disease-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Have you had any of the following.
+                                    <br>Please check all that apply
+                                 </h4>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Anaemia</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Artificial joints</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Allergies</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Asthma</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Blood disease(please specify)</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Cancer</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Dizziness/Fainting</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Diabetes</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Epilepsy</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Excessive bleeding</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Glaucoma</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Blood pressure low or high (specify)</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Heart disease or murmur</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Hepatitis A, B or C (please specify)</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>HIV/AIDS</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Kidney disease</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Liver disease</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Osteoporosis</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Pacemaker</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Psychological disorders</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Rheumatic fever</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Radiation therapy</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Respiratory problems</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Stroke</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Sinus problems</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Tumours</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Turberculosis</label>
+                              </div>
+                              <div class="checkbox">
+                                 <label>
+                                 <input type="checkbox" value="">
+                                 <span class="checkmark"></span>Other (please specify)</label>
+                              </div>
+                           </div>
+                           <!--Step 2 buttons-->
+                           <div class="row">
+                              <ul class="list-inline">
+                                 <li>
+                                    <button type="button" class="prev-step">
+                                    Previous
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="next-step">
+                                    Next
+                                    </button>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!--end Step 2-->
+                        <!--Step 3-->
+                        <div class="tab-pane" role="tabpanel" id="step3">
+                           <!--Step 3 title-->
+                           <div class="block block--title">
+                              <div class="row">
+                                 <h3>Medical history</h3>
+                              </div>
+                           </div>
+                           <!--Step 3 pregnant check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Are you pregnant?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="pregnant_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="pregnant_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>How many month</h5>
+                                    <input type="text" class="form-control" disabled="disabled">
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 illness check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Have you had any serious illnesses in the last two years?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="illness_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="illness_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 medication check-->
+                           <div class="block block--medication-check">
+                              <div class="row">
+                                 <h4>Are you taking any medications?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="medication_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="medication_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12 medication_detail">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 smoke check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you smoke?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="smoke_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="smoke_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>How many a day?</h5>
+                                    <input type="text" class="form-control" disabled="disabled">
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 sleep apnoea check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you suffer from sleep apnoea?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="apnoea_check">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="apnoea_check">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="apnoea_check">
+                                    <span class="checkmark"></span>Don't know</label>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 allergies to penicillin check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you have allergies to penicillin or other drugs?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="penicillin_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="penicillin_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12 penicillin_detail">
+                                    <label>Please provide details</label>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 sleep apnoea check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you require antibiotic cover for dental treatment?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="antibiotic_check">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="antibiotic_check">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="antibiotic_check">
+                                    <span class="checkmark"></span>Don't know</label>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 3 buttons-->
+                           <div class="row">
+                              <ul class="list-inline">
+                                 <li>
+                                    <button type="button" class="prev-step">
+                                    Previous
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="next-step">
+                                    Next
+                                    </button>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!--end Step 3-->
+                        <!--Step 4-->
+                        <div class="tab-pane" role="tabpanel" id="step4">
+                           <!--Step 4 title-->
+                           <div class="block block--title">
+                              <div class="row">
+                                 <h3>Dental history</h3>
+                              </div>
+                           </div>
+                           <!--Step 4 smile check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Is there anything you would like to change about your smile?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="smile_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="smile_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 4 fear check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Are you fearful of dental treatments, have had  complications or an unfavourable experience?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="fear_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="fear_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 4 sensitive check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you have sensitive teeth, any grooves or indents, broken or chipped teeth?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="sensitive_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="sensitive_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 4 jaw check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you have problems with your bite or jaw? Any clicking, clenching, grinding or wear a bite appliance?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="jaw_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="jaw_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 4 gum check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you have gum disease, gum bleeding or gum recession?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="gum_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="gum_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 4 buttons-->
+                           <div class="row">
+                              <ul class="list-inline">
+                                 <li>
+                                    <button type="button" class="prev-step">
+                                    Previous
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="button" class="next-step">
+                                    Next
+                                    </button>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!--end Step 4-->
+                        <!--Step 5-->
+                        <div class="tab-pane" role="tabpanel" id="step5">
+                           <!--Step 5 title-->
+                           <div class="block block--title">
+                              <div class="row">
+                                 <h3>Consent for services</h3>
+                              </div>
+                           </div>
+                           <!--Step 5 concerns check-->
+                           <div class="block">
+                              <div class="row">
+                                 <h4>Do you have any immediate concerns?
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="concerns_check" class="check-no">
+                                    <span class="checkmark"></span>No</label>
+                                 </div>
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label>
+                                    <input type="radio" value="" name="concerns_check" class="check-yes">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                              <div class="row detail disabled">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <h5>Please specify</h5>
+                                    <textarea class="form-control" rows="5" disabled="disabled"></textarea>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 5 previous dentist-->
+                           <div class="block block--date">
+                              <div class="row">
+                                 <h4>Your previous Dentist
+                                 </h4>
+                              </div>
+                              <div class="row">
+                                 <h5>Name of Dentist</h5>
+                              </div>
+                              <div class="row">
+                                 <div class="col-md-4 offset-md-8 col-sm-12">
+                                    <input type="text" class="form-control" name="dentist_name">
+                                 </div>
+                              </div>
+                              <div class="row">
+                                 <h5>Most recent examination</h5>
+                              </div>
+                              <div class="row">
+                                 <input type="text" class="form-control input-date-day" placeholder="DD">
+                                 <input type="text" class="form-control input-date-month" placeholder="MM">
+                                 <input type="text" class="form-control input-date-year" placeholder="YYYY">
+                              </div>
+                           </div>
+                           <!--Step 5 consent-->
+                           <div class="block">
+                              <div class="row">
+                                 <p>I consent to the performing of the dental procedures agreed to be necessary or advisable, including the use of local anaesthetics as indicated.</p>
+                              </div>
+                              <div class="row">
+                                 <div class="checkbox block--checkbox-inline">
+                                    <label id="patient_name">
+                                    <input type="checkbox" value="" name="consent_check">
+                                    <span class="checkmark"></span>Yes</label>
+                                 </div>
+                              </div>
+                           </div>
+                           <!--Step 5 buttons-->
+                           <div class="row">
+                              <ul class="list-inline">
+                                 <li>
+                                    <button type="button" class="prev-step">
+                                    Previous
+                                    </button>
+                                 </li>
+                                 <li>
+                                    <button type="submit" class="next-step">
+                                    Submit
+                                    </button>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <!--end Step 5-->
+                     </div>
+               </form>
+               </div>
             </div>
-          </div>
-          <!--end navigation bar-->
-
-          <form role="form">
-              <div class="row ">
-            <!--Step 1-->
-            <div class="tab-content">
-              <div class="tab-pane active" role="tabpanel" id="step1">
-                <div class="row"><h3>Medical history</h3></div>
-                <div class="row"><p>This is step 1</p></div>
-                <div class="row">
-                        <ul class="list-inline">
-                          <li>
-                            <button
-                              type="button"
-                              class="btn btn-primary btn-info-full next-step"
-                            >
-                              Save and continue
-                            </button>
-                          </li>
-                        </ul>
-                </div>
-              </div>
-              <!--end Step 1-->
-              <!--Step 2-->
-              <div class="tab-pane" role="tabpanel" id="step2">
-                    <div class="row"><h3>Medical history</h3></div>
-                    <div class="row"><p>This is step 2</p></div>
-                    <div class="row">
-                            <ul class="list-inline">
-                              <li>
-                                <button type="button" class="btn btn-default prev-step">
-                                  Previous
-                                </button>
-                              </li>
-                              <li>
-                                <button
-                                  type="button"
-                                  class="btn btn-primary btn-info-full next-step"
-                                >
-                                  Save and continue
-                                </button>
-                              </li>
-                            </ul>
-                    </div>
-              </div>
-              <!--end Step 2-->
-              <!--Step 3-->
-              <div class="tab-pane" role="tabpanel" id="step3">
-                    <div class="row"><h3>Medical history</h3></div>
-                    <div class="row"><p>This is step 3</p></div>
-                    <div class="row">
-                            <ul class="list-inline">
-                              <li>
-                                <button type="button" class="btn btn-default prev-step">
-                                  Previous
-                                </button>
-                              </li>
-                              <li>
-                                <button
-                                  type="button"
-                                  class="btn btn-primary btn-info-full next-step"
-                                >
-                                  Save and continue
-                                </button>
-                              </li>
-                            </ul>
-                    </div>
-              </div>
-              <!--end Step 3-->
-              <!--Step 4-->
-              <div class="tab-pane" role="tabpanel" id="step3">
-                    <div class="row"><h3>Medical history</h3></div>
-                    <div class="row"><p>This is step 4</p></div>
-                    <div class="row">
-                            <ul class="list-inline">
-                              <li>
-                                <button type="button" class="btn btn-default prev-step">
-                                  Previous
-                                </button>
-                              </li>
-                              <li>
-                                <button
-                                  type="button"
-                                  class="btn btn-primary btn-info-full next-step"
-                                >
-                                  Save and continue
-                                </button>
-                              </li>
-                            </ul>
-                    </div>
-              </div>
-              <!--end Step 4-->
-              <!--Step 5-->
-              <div class="tab-pane" role="tabpanel" id="step3">
-                    <div class="row"><h3>Medical history</h3></div>
-                    <div class="row"><p>This is step 5</p></div>
-                    <div class="row">
-                            <ul class="list-inline">
-                              <li>
-                                <button type="button" class="btn btn-default prev-step">
-                                  Previous
-                                </button>
-                              </li>
-                              <li>
-                                <button
-                                  type="button"
-                                  class="btn btn-primary btn-info-full next-step"
-                                >
-                                  Submit
-                                </button>
-                              </li>
-                            </ul>
-                    </div>
-              </div>
-              <!--end Step 5-->
-            </div>
-          </form>
-        </div>
-        </div>
-      </section>
-    </div>
-  </body>
-</html>
+         </section>
+      </div>
+   </body>
+<!-- </html> -->
