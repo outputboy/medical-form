@@ -117,6 +117,7 @@ $(document).ready(function() {
     });
 
   //Validate rules
+
   $('#medical-history-form').validate({
     rules: {
       date_of_birth_day: {
@@ -169,8 +170,19 @@ $(document).ready(function() {
     hightlight: function(element) {
       $(element)
         .closest('.row-contact-details')
-        .addClass('error');
+        .addClass('danger');
     }
+  });
+  // multiple rules
+  $('input').each(function() {
+    $(this).rules('add', {
+      maxlength: 30
+    });
+  });
+  $('textarea').each(function() {
+    $(this).rules('add', {
+      maxlength: 500
+    });
   });
 });
 function nextTab(elem) {
