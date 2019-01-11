@@ -160,6 +160,22 @@ $(document).ready(function() {
       },
       medicare_card_reference: {
         required: true
+      },
+      recent_examination__day: {
+        number: true,
+        exactlength: 2,
+        min: 1,
+        max: 31
+      },
+      recent_examination__month: {
+        number: true,
+        exactlength: 2,
+        min: 1,
+        max: 12
+      },
+      recent_examination__year: {
+        number: true,
+        exactlength: 4
       }
     },
     messages: {
@@ -170,7 +186,7 @@ $(document).ready(function() {
     hightlight: function(element) {
       $(element)
         .closest('.row-contact-details')
-        .addClass('danger');
+        .addClass('error');
     }
   });
   // multiple rules

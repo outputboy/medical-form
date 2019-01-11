@@ -27,7 +27,8 @@ a {
     margin-right: 0;
 }
 
-.danger {
+.error {
+    color: #dc3545;
     font-size: 12px;
     display: block;
 }
