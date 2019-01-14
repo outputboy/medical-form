@@ -161,6 +161,15 @@ $(document).ready(function() {
       medicare_card_reference: {
         required: true
       },
+      medication: {
+        required: true
+      },
+      penicillin: {
+        required: true
+      },
+      antibiotic: {
+        required: true
+      },
       recent_examination__day: {
         number: true,
         exactlength: 2,
@@ -181,14 +190,38 @@ $(document).ready(function() {
     messages: {
       gender: {
         required: 'Please select at least 1 box'
+      },
+      medication: {
+        required: 'Please select at least 1 box'
+      },
+      penicillin: {
+        required: 'Please select at least 1 box'
+      },
+      antibiotic: {
+        required: 'Please select at least 1 box'
       }
     },
-    hightlight: function(element) {
-      $(element)
-        .closest('.row-contact-details')
-        .addClass('error');
+    errorPlacement: function(error, element) {
+      error.insertAfter(element);
+      if (element.attr('type') == 'radio') {
+        error.appendTo(element.parentsUntil('.block', '.radio-button-row'));
+      }
+    },
+    showErrors: function(errorMap, errorList) {
+      // Check all form validate errors
+      if (this.numberOfInvalids() > 0) {
+        $('.form-error-alert').html(
+          '<li class="error">* Your form contains ' +
+            this.numberOfInvalids() +
+            ' errors, see details above.</li>'
+        );
+      } else {
+        $('.form-error-alert').html('');
+      }
+      this.defaultShowErrors();
     }
   });
+
   // multiple rules
   $('input').each(function() {
     $(this).rules('add', {

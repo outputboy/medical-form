@@ -5,3 +5,5 @@
 - Multi step form is developed with Bootstrap & jQuery
 - Validation using jQuery validate
 - Datepicker using Bootstrap Datepicker
+
+### Input length limit is currently set to 30, textarea length limit is 500

@@ -27,10 +27,16 @@ a {
     margin-right: 0;
 }
 
+/* form control */
+
 .error {
     color: #dc3545;
     font-size: 12px;
     display: block;
+}
+
+.radio-button-row .error {
+    font-weight: bold;
 }
 
 .form-control[disabled] {
@@ -41,6 +47,7 @@ a {
     margin-bottom: 30px;
 }
 
+.short-input-main,
 .short-input {
     width: 40%;
 }
@@ -64,6 +71,10 @@ a {
     font-size: 26px;
     position: absolute;
     left: 0;
+    top: 0;
+}
+
+.mandatory-sign-top::before {
     top: -5px;
 }
 
@@ -327,11 +338,49 @@ textarea.form-control {
     background-color: white;
 }
 
-.short-input {
-    width: 40%;
-}
-
 @media( max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    .block--contact-details {
+        font-size: 14px;
+    }
+    .short-input-main {
+        width: 100%;
+    }
+    .next-step,
+    .prev-step {
+        margin-bottom: 20px;
+        padding: 15px 80px;
+        width: 250px;
+    }
+    .list-inline li {
+        padding: 0;
+    }
+    .block--date input {
+        margin-right: 5px;
+    }
+    .p-title {
+        display: none;
+    }
+    /* navigation style */
+    span.round-tab {
+        width: 40px;
+        height: 40px;
+        line-height: 37px;
+    }
+    .wizard li.active span.round-tab {
+        line-height: 39px;
+    }
+    .wizard .nav-tabs {
+        margin-top: 20px;
+    }
+    .wizard .wizard-inner {
+        margin-bottom: 0;
+    }
+    .wizard .nav-tabs>li {
+        width: 18%;
+    }
     .tab-content {
         padding: 20px;
     }
@@ -342,33 +391,13 @@ textarea.form-control {
     .wizard-inner {
         width: 95%;
     }
-    span.round-tab {
-        font-size: 16px;
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-    }
     .connecting-line {
         display: none;
     }
-    span.p-title {
-        bottom: -40px;
+    .block--checkbox-inline {
+        display: block;
     }
-    .short-input {
-        width: 100%;
-    }
-    .next-step,
-    .prev-step {
-        margin-bottom: 20px;
-    }
-    .block--date input {
-        margin-right: 5px;
-    }
-}
-
-@media( max-width: 350px) {
-    .next-step,
-    .prev-step {
-        padding: 15px 80px;
+    .next-step-row {
+        text-align: center;
     }
 }
