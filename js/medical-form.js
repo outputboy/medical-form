@@ -130,6 +130,7 @@ $(document).ready(function() {
     });
 
   //Validate rules
+
   $('#medical-history-form').validate({
     rules: {
       date_of_birth_day: {
