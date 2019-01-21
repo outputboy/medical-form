@@ -401,3 +401,69 @@ textarea.form-control {
         text-align: center;
     }
 }
+
+/* Form complete page */
+
+.block--complete {
+    margin-top: 2em;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Checked sign */
+
+.complete-checked {
+    position: relative;
+    display: block;
+    margin: 30px auto;
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.complete-checked::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    width: 12px;
+    height: 22px;
+    border: solid #69A030;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.complete-checked::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #69A030;
+}
+
+/* Error warrning sign */
+
+.complete-error {
+    display: block;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 50px;
+}
+
+.complete-title {
+    margin-bottom: 30px;
+}

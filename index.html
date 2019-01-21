@@ -6,7 +6,7 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <!--Customized CSS-->
-      <link href="style.css" rel="stylesheet" type="text/css" />
+      <link href="css/medical-from.css" rel="stylesheet" type="text/css" />
       <!--Jquery CDN-->
       <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
          crossorigin="anonymous"></script>
@@ -16,10 +16,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.1/js/bootstrap-datepicker.min.js"></script>
       <!--Customized JS-->
-      <script src="medical-form.js"></script>
+      <script src="js/medical-form.js"></script>
    </head>
    <body>
-      <div class="container">
+      <div class="container main--container">
          <section>
             <div class="wizard">
                <!--navigation bar-->
@@ -67,17 +67,21 @@
                            <span class="p-title">Consent</span>
                            </a>
                         </li>
+                        <li role="presentation" class="disabled" style="display: none;">
+                           <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                           </a>
+                        </li>
                      </ul>
                   </div>
                </div>
                <!--end navigation bar-->
                <form role="form" id="medical-history-form">
                   <div class="row ">
-                     <!--Step 1-->
                      <div class="tab-content">
+                     <!--Step 1-->
                         <div class="tab-pane active" role="tabpanel" id="step1">
                            <div class="block row logo">
-                              <img src="./logo.png" class="img-responsive" />
+                              <img src="./images/logo.png" class="img-responsive" />
                            </div>
                            <!--Step 1 header-->
                            <div class="block block--header">
@@ -324,7 +328,7 @@
                               </div>
                            </div>
                           </div>
-                          <!--Step 3 medication check-->
+                          <!--Step 2 medication check-->
                           <div class="block block-with-detail">
                            <div class="row">
                               <h4>Are you taking any medications?
@@ -350,7 +354,7 @@
                                 </div>
                              </div>
                           </div>
-                          <!--Step 3 allergies to penicillin check-->
+                          <!--Step 2 allergies to penicillin check-->
                           <div class="block block-with-detail">
                              <div class="row">
                                 <h4>Do you have allergies to penicillin or other drugs?
@@ -376,7 +380,7 @@
                                 </div>
                              </div>
                           </div>
-                          <!--Step 3 sleep antibiotic check-->
+                          <!--Step 2 sleep antibiotic check-->
                           <div class="block">
                              <div class="row">
                                 <h4>Do you require antibiotic cover for dental treatment?
@@ -429,7 +433,7 @@
                                  <h3>Medical history</h3>
                               </div>
                            </div>
-                           <!--Step 2 disease-->
+                           <!--Step 3 disease-->
                            <div class="row">
                            <div class="block short-input-main block--disease">
                               <div class="row">
@@ -879,7 +883,7 @@
                                  <input type="text" class="form-control input-date-month" placeholder="MM" name="recent_examination_month" disabled="disabled">
                                  <input type="text" class="form-control input-date-year" placeholder="YYYY" name="recent_examination_year" disabled="disabled">
                                  <div class="input-group date">
-                                    <div class="input-group-addon" ><img src="./calendar.png" class="img-responsive" /></div>
+                                    <div class="input-group-addon" ><img src="./images/calendar.png" class="img-responsive" /></div>
                                   </div>
                               </div>
                               </div>
@@ -906,7 +910,7 @@
                                     </button>
                                  </li>
                                  <li>
-                                    <button type="submit" class="next-step" id="submit-button">
+                                    <button type="button" class="next-step" id="submit-button">
                                     Submit
                                     </button>
                                  </li>
@@ -917,6 +921,9 @@
                            </div>
                         </div>
                         <!--end Step 5-->
+                        <!--Start complete form-->
+                        <div class="tab-pane" role="tabpanel" id="complete"></div>
+                        <!--End complete form-->
                      </div>
                </form>
                </div>

@@ -1,4 +1,8 @@
 $(document).ready(function() {
+  // Load each steps
+  $('#step1').load('./html/step1.html');
+  $('#complete').load('./html/complete.html');
+
   // Multi step form Wizard
   $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
     var $target = $(e.target);
@@ -60,10 +64,19 @@ $(document).ready(function() {
       },
       function(output) {
         console.log(output['result']);
+        $('.wizard-inner').hide();
+        $('.main--container').css('padding', 0);
+        $('.tab-content').css('height', '100%');
+        // Change complete info page if error
+        // $('#complete').load('./html/error.html');
       },
       'json'
     );
-    e.preventDefault();
+
+    // Navigate to next page
+    var $active = $('.wizard .nav-tabs li.active');
+    $active.next().removeClass('disabled');
+    nextTab($active);
   });
 
   // If 'yes' raido button checked, enable relative text input
@@ -117,7 +130,6 @@ $(document).ready(function() {
     });
 
   //Validate rules
-
   $('#medical-history-form').validate({
     rules: {
       date_of_birth_day: {
@@ -223,14 +235,14 @@ $(document).ready(function() {
   });
 
   // multiple rules
-  $('input').each(function() {
-    $(this).rules('add', {
-      maxlength: 30
-    });
-  });
   $('textarea').each(function() {
     $(this).rules('add', {
       maxlength: 500
+    });
+  });
+  $('.short-input').each(function() {
+    $(this).rules('add', {
+      maxlength: 10
     });
   });
 });
