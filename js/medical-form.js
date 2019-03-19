@@ -124,13 +124,16 @@ $(document).ready(function() {
       var newDate = new Date(ev.date);
 
       $(this)
-        .siblings('.input-date-day')
+        .siblings('div')
+        .find('.input-date-day')
         .val(('0' + newDate.getDate()).slice(-2));
       $(this)
-        .siblings('.input-date-month')
+        .siblings('div')
+        .find('.input-date-month')
         .val(('0' + (newDate.getMonth() + 1)).slice(-2));
       $(this)
-        .siblings('.input-date-year')
+        .siblings('div')
+        .find('.input-date-year')
         .val(newDate.getFullYear());
     });
 
@@ -165,6 +168,7 @@ $(document).ready(function() {
   });
 
   //Validate rules
+  /*
   const current_year = new Date().getFullYear();
   $('#medical-history-form').validate({
     rules: {
@@ -271,6 +275,7 @@ $(document).ready(function() {
       this.defaultShowErrors();
     }
   });
+  */
 
   // multiple rules
   $('textarea').each(function() {
