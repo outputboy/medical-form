@@ -42,12 +42,14 @@ $(document).ready(function() {
     // Navigate to next page
     var $active = $('.wizard .nav-tabs li.active');
     $active.next().removeClass('disabled');
+    window.scrollTo(0, 0);
     nextTab($active);
   });
 
   $('.prev-step').click(function(e) {
     // Navigate to next page
     var $active = $('.wizard .nav-tabs li.active');
+    window.scrollTo(0, 0);
     prevTab($active);
   });
 
@@ -114,7 +116,10 @@ $(document).ready(function() {
 
   // Bootstrap Date picker
   $('.input-group.date')
-    .datepicker()
+    .datepicker({
+      startDate: '+1d',
+      autoclose: true
+    })
     .on('changeDate', function(ev) {
       var newDate = new Date(ev.date);
 

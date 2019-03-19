@@ -313,19 +313,22 @@ textarea.form-control {
 
 /* Date input */
 
+td.day:hover {
+    cursor: pointer;
+}
+
 .block--date input {
     display: inline-block;
     margin-right: 10px;
     text-align: center;
 }
 
-.input-date-day,
-.input-date-month {
-    width: 20%;
+.row-birth-date>div {
+    padding-left: 0;
 }
 
-.input-date-year {
-    width: 30%;
+.row-birth-date>.col-xs-6 {
+    padding-right: 0;
 }
 
 .input-group.date {
@@ -351,6 +354,7 @@ textarea.form-control {
     font-size: 16px;
     font-weight: bold;
     background-color: white;
+    margin-bottom: 20px;
 }
 
 @media( max-width: 768px) {
@@ -365,7 +369,6 @@ textarea.form-control {
     }
     .next-step,
     .prev-step {
-        margin-bottom: 20px;
         padding: 15px 80px;
         width: 250px;
     }
