@@ -31,6 +31,13 @@ a {
     font-style: italic;
 }
 
+/* Button outliners */
+
+body:not(.show-focus-outlines) button:focus,
+body:not(.show-focus-outlines) a:focus {
+    outline: none;
+}
+
 /* form control */
 
 .error {

@@ -148,8 +148,18 @@ $(document).ready(function() {
   limitLen($('input[name="medicare_card_number"]'), 10);
   limitLen($('input[name="medicare_card_reference"]'), 1);
 
-  //Validate rules
+  // Remove click button outliners
+  document.addEventListener('keydown', function(e) {
+    if (e.keyCode === 9) {
+      $('body').addClass('show-focus-outlines');
+    }
+  });
 
+  document.addEventListener('click', function(e) {
+    $('body').removeClass('show-focus-outlines');
+  });
+
+  //Validate rules
   const current_year = new Date().getFullYear();
   $('#medical-history-form').validate({
     rules: {
