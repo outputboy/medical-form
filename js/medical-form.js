@@ -168,7 +168,6 @@ $(document).ready(function() {
   });
 
   //Validate rules
-  /*
   const current_year = new Date().getFullYear();
   $('#medical-history-form').validate({
     rules: {
@@ -275,7 +274,6 @@ $(document).ready(function() {
       this.defaultShowErrors();
     }
   });
-  */
 
   // multiple rules
   $('textarea').each(function() {
