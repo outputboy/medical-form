@@ -27,6 +27,10 @@ a {
     margin-right: 0;
 }
 
+.font-italic {
+    font-style: italic;
+}
+
 /* form control */
 
 .error {
@@ -288,6 +292,10 @@ textarea.form-control {
 
 .row-contact-details {
     border-bottom: 2px solid #8AA5D0;
+}
+
+.contact-details-label {
+    padding-left: 0;
 }
 
 .span--contact-detail {

@@ -129,8 +129,28 @@ $(document).ready(function() {
         .val(newDate.getFullYear());
     });
 
+  // Limit date input only numbers
+  $(
+    '.input-date-day, .input-date-month, .input-date-year,input[name="medicare_card_number"],input[name="medicare_card_reference"]'
+  ).on('keypress keyup blur', function(event) {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[^\d].+/, '')
+    );
+    if (event.which < 48 || event.which > 57) {
+      event.preventDefault();
+    }
+  });
+
+  limitLen($('.input-date-day,.input-date-month'), 2);
+  limitLen($('.input-date-year'), 4);
+  limitLen($('input[name="medicare_card_number"]'), 10);
+  limitLen($('input[name="medicare_card_reference"]'), 1);
+
   //Validate rules
 
+  const current_year = new Date().getFullYear();
   $('#medical-history-form').validate({
     rules: {
       date_of_birth_day: {
@@ -150,7 +170,8 @@ $(document).ready(function() {
       date_of_birth_year: {
         required: true,
         number: true,
-        exactlength: 4
+        exactlength: 4,
+        max: current_year
       },
       gender: {
         required: true
@@ -169,7 +190,8 @@ $(document).ready(function() {
       },
       medicare_card_number: {
         required: true,
-        number: true
+        number: true,
+        exactlength: 10
       },
       medicare_card_reference: {
         required: true
@@ -259,6 +281,22 @@ function prevTab(elem) {
     .find('a[data-toggle="tab"]')
     .click();
 }
+
+// Limit element length
+function limitLen(elem, len) {
+  $(elem).on('keypress keyup blur', function(event) {
+    $(this).val(
+      $(this)
+        .val()
+        .replace(/[^\d].+/, '')
+    );
+    let text_length = $(event.target).val().length;
+    if (text_length > len - 1) {
+      event.preventDefault();
+    }
+  });
+}
+
 // Added exacelength check
 $.validator.addMethod(
   'exactlength',
