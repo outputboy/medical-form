@@ -323,11 +323,11 @@ td.day:hover {
     text-align: center;
 }
 
-.row-birth-date>div {
+.row-date>div {
     padding-left: 0;
 }
 
-.row-birth-date>.col-xs-6 {
+.row-date>.col-xs-6 {
     padding-right: 0;
 }
 
@@ -336,7 +336,7 @@ td.day:hover {
     width: 42px;
     height: 42px;
     vertical-align: middle;
-    margin-bottom: 10px;
+    margin-top: 13px;
 }
 
 .input-group.date .input-group-addon {
